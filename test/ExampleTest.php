@@ -23,3 +23,26 @@ final class ExampleTest extends TestCase
     $this->assertInstanceOf('App\BodyRenderer', $sut->sub_renderers[1]);
     $this->assertInstanceOf('App\FooterRenderer', $sut->sub_renderers[2]);
   }
+
+
+  /**
+   * @test
+   * リスト4.4 振る舞いを検証するテスト
+   */
+  public function MessageRendererは正しく描画する()
+  {
+    $sut = new MessageRenderer();
+    $sut->messageRenderer();
+
+    $message = new Message(
+      'Header',
+      'Body',
+      'Footer'
+    );
+    
+    $this->assertEquals(
+      '<b>Header</b><p>Body</p><i>Footer</i>',
+      $sut->render($message)
+    );
+  }
+}

@@ -7,6 +7,16 @@ class Message
   public $header;
   public $body;
   public $footer;
+
+  public function __construct(
+    string $header = '',
+    string $body = '',
+    string $footer = ''
+  ) {
+    $this->header = $header;
+    $this->body = $body;
+    $this->footer = $footer;
+  }
 }
 
 abstract class IRenderer
