@@ -15,7 +15,7 @@ final class ExampleTest extends TestCase
    */
   public function MessageRendererは正しい補助的描画クラスを使っている() : void
   {
-    $message = new Message();
+    // $message = new Message();
     $sut = new MessageRenderer();
     $sut->messageRenderer();
     $this->assertCount(3, $sut->sub_renderers);
